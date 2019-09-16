@@ -158,3 +158,8 @@ guard 'livereload' do
   watch(%r{app/helpers/.+\.rb})
   watch(%r{config/locales/.+\.yml})
 end
+
+guard 'passenger' do
+  watch(/^lib\/.*\.rb$/)
+  watch(/^config\/.*\.rb$/)
+end
