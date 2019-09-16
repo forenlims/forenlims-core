@@ -163,3 +163,7 @@ guard 'passenger' do
   watch(/^lib\/.*\.rb$/)
   watch(/^config\/.*\.rb$/)
 end
+
+guard 'delayed', :environment => 'development' do
+  watch(%r{^app/(.+)\.rb})
+end

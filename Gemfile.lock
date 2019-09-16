@@ -83,6 +83,8 @@ GEM
       gherkin (~> 4.0)
     cucumber-wire (0.0.1)
     debug_inspector (0.0.3)
+    delayed_job (4.1.8)
+      activesupport (>= 3.0, < 6.1)
     diff-lcs (1.3)
     em-websocket (0.5.1)
       eventmachine (>= 0.12.9)
@@ -116,6 +118,10 @@ GEM
       cucumber (~> 2.0)
       guard-compat (~> 1.0)
       nenv (~> 0.1)
+    guard-delayed (0.4.0)
+      delayed_job (~> 4)
+      guard (~> 2)
+      guard-compat (~> 1.1)
     guard-livereload (2.5.2)
       em-websocket (~> 0.5)
       guard (~> 2.8)
@@ -279,6 +285,7 @@ DEPENDENCIES
   guard-brakeman
   guard-bundler
   guard-cucumber
+  guard-delayed
   guard-livereload (~> 2.5)
   guard-passenger
   guard-rspec
