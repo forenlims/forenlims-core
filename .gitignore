@@ -23,6 +23,9 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
+# ignore database.yml containing database passwords - does not belong in version control.
+/config/database.yml
+
 /public/packs
 /public/packs-test
 /node_modules
