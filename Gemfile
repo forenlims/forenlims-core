@@ -44,6 +44,10 @@ group :development do
   gem 'guard-cucumber'
   gem 'guard-rspec', require: false
   gem 'guard-spring'
+  gem "rack-livereload"
+  gem 'guard-livereload', '~> 2.5', require: false
+  gem "better_errors"
+  gem "binding_of_caller"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

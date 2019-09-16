@@ -56,7 +56,13 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
       zeitwerk (~> 2.1, >= 2.1.8)
+    better_errors (2.5.1)
+      coderay (>= 1.0.0)
+      erubi (>= 1.0.0)
+      rack (>= 0.9.0)
     bindex (0.8.1)
+    binding_of_caller (0.8.0)
+      debug_inspector (>= 0.0.1)
     bootsnap (1.4.5)
       msgpack (~> 1.0)
     brakeman (4.6.1)
@@ -76,8 +82,13 @@ GEM
     cucumber-core (1.5.0)
       gherkin (~> 4.0)
     cucumber-wire (0.0.1)
+    debug_inspector (0.0.3)
     diff-lcs (1.3)
+    em-websocket (0.5.1)
+      eventmachine (>= 0.12.9)
+      http_parser.rb (~> 0.6.0)
     erubi (1.8.0)
+    eventmachine (1.2.7)
     ffi (1.11.1)
     formatador (0.2.5)
     gherkin (4.1.3)
@@ -105,6 +116,11 @@ GEM
       cucumber (~> 2.0)
       guard-compat (~> 1.0)
       nenv (~> 0.1)
+    guard-livereload (2.5.2)
+      em-websocket (~> 0.5)
+      guard (~> 2.8)
+      guard-compat (~> 1.0)
+      multi_json (~> 1.8)
     guard-rspec (4.7.3)
       guard (~> 2.1)
       guard-compat (~> 1.1)
@@ -113,6 +129,7 @@ GEM
       guard (~> 2.0)
       guard-compat (~> 1.1)
       spring
+    http_parser.rb (0.6.0)
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
     jbuilder (2.9.1)
@@ -149,6 +166,8 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
     rack (2.0.7)
+    rack-livereload (0.3.17)
+      rack
     rack-proxy (0.6.5)
       rack
     rack-test (1.1.0)
@@ -246,17 +265,21 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  better_errors
+  binding_of_caller
   bootsnap (>= 1.4.2)
   byebug
   guard
   guard-brakeman
   guard-bundler
   guard-cucumber
+  guard-livereload (~> 2.5)
   guard-rspec
   guard-spring
   jbuilder (~> 2.7)
   listen (>= 3.0.5, < 3.2)
   pg (>= 0.18, < 2.0)
+  rack-livereload
   rails (~> 6.0.0)
   sass-rails (~> 5)
   spring
