@@ -42,6 +42,7 @@ group :development do
   gem 'guard-bundler', require: false
   gem 'guard-brakeman'
   gem 'guard-cucumber'
+  gem 'guard-rspec', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
