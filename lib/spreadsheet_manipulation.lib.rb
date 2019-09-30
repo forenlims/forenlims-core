@@ -66,7 +66,8 @@ sample_names.uniq!
 # get all the markers analyzed in the files
 # For now, we expect the same markers in both files, so it's ok to read them from one file.
 # TODO: Make the system able to parse files containing different markers if necessary
-markers = esi_genotypes.values_at("Marker").uniq.flatten
+markers = esi_genotypes.values_at("Marker").uniq.flatten + esx_genotypes.values_at("Marker").uniq.flatten
+markers.uniq!
 # Figure out how many Allele columns we have in our files and collect these headers
 esi_allele_cols = esi_genotypes.headers.keep_if{ |header| header =~ /Allele(.*)/}
 esx_allele_cols = esx_genotypes.headers.keep_if{ |header| header =~ /Allele(.*)/}
@@ -161,11 +162,11 @@ samples.each do |sample|
     genotype.uniq!
     duplicates.each do |d|
       genotype[genotype.index(d)] = "$$"+ d + "##" if genotype.index(d)
+    end
       genotype_pairs = genotype.each_slice(2).to_a
       genotype_pairs_joined = Array.new()
       genotype_pairs.each do |pair|
-        genotype_pairs_joined << pair.join("/")
-      end 
+      genotype_pairs_joined << pair.join("/")
       sample_row.store(marker, genotype_pairs_joined.join('\n'))
     end
   end
