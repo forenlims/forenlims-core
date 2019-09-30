@@ -23,6 +23,12 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+
+# add highline gem to bundle for command line stuff for now
+# only needed for experimenting with csv conversion and formatting.
+  gem 'highline'
+
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
