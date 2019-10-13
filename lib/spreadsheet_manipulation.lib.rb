@@ -146,7 +146,6 @@ if delimiter == 'comma'
   output_filename = output_filename + '.csv'
   outfile = CSV.open(output_filename, "wb", headers: true, write_headers: true)
 end
-testfile = File.open('testfile.txt', 'w+')
 
 headers = [ "Sample Name", "SE33", "D21S11", "vWA", "TH01", "FGA", "D3S1358", "D8S1179", "D18S51", "D1S1656", "D2S441", "D10S1248", "D12S391", "D22S1045", "D16S539", "D2S1338", "D19S433", "AMEL" ]
 #headers << samples.first.composite.keys.flatten
