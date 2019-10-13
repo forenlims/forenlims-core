@@ -39,6 +39,12 @@ group :development, :test do
  
   # This gem helps Capybara interact with the web browser.
   gem 'webdrivers'
+  
+  # Factory Bot for test data
+  gem 'factory_bot'
+  
+  # Faker for faking test data in factories
+  gem 'faker'
 end
 
 group :development do
