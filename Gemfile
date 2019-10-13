@@ -45,6 +45,9 @@ group :development, :test do
   
   # Faker for faking test data in factories
   gem 'faker'
+  
+  # database-cleaner to clean up test data
+  gem 'database_cleaner'
 end
 
 group :development do
