@@ -1,5 +1,6 @@
 Given(/^the User is not logged in$/) do
   current_user = nil
+  visit('/users/sign_out') # ensure no user is logged in.
 end
 
 When(/^the User opens the application$/) do
@@ -7,5 +8,5 @@ When(/^the User opens the application$/) do
 end
 
 Then(/^the User should be redirected to the Login page$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(page).to have_button('Log in')
 end
