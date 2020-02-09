@@ -5,8 +5,8 @@
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-  
-  config.cache_classes = false
+
+  config.cache_classes = true
 
   # Do not eager load code on boot. This avoids loading your whole application
   # just for the purpose of running a single test. If you are using a tool that
@@ -23,11 +23,11 @@ Rails.application.configure do
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
   config.cache_store = :null_store
-  
+
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
   config.i18n.fallbacks = [I18n.default_locale]
-  
+
   # Raise exceptions instead of rendering exception templates.
   config.action_dispatch.show_exceptions = false
 
