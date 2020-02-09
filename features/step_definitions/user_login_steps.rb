@@ -1,4 +1,3 @@
-require 'capybara'
 Given(/^the User is not logged in$/) do
   current_user = nil
 end
