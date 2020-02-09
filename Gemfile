@@ -34,18 +34,20 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 3.8'
+
+  gem 'cucumber-rails', require: false
   # Capybara, the library that allows us to interact with the browser using Ruby
   gem 'capybara'
- 
+
   # This gem helps Capybara interact with the web browser.
   gem 'webdrivers'
-  
+
   # Factory Bot for test data
   gem 'factory_bot'
-  
+
   # Faker for faking test data in factories
   gem 'faker'
-  
+
   # database-cleaner to clean up test data
   gem 'database_cleaner'
 end
