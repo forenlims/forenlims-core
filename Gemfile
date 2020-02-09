@@ -39,6 +39,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.8'
 
   gem 'cucumber-rails', require: false
+  gem "spring-commands-cucumber"
+  gem 'spring-commands-rspec'
   # Capybara, the library that allows us to interact with the browser using Ruby
   gem 'capybara'
 
