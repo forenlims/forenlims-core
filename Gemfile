@@ -55,6 +55,9 @@ group :development, :test do
 
   # database-cleaner to clean up test data
   gem 'database_cleaner'
+
+  # add launchy to automatically launch browser
+  gem 'launchy'
 end
 
 group :development do
@@ -77,6 +80,8 @@ group :development do
   gem 'guard-passenger'
   gem 'guard-delayed'
 end
-
+group :test do
+  gem 'simplecov', require: false
+end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
