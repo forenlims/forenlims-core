@@ -28,8 +28,16 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
+  # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
+  # the I18n.default_locale when a translation cannot be found).
+  config.i18n.fallbacks = [I18n.default_locale]
+
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local
+
+# Default configuration for action_mailer with devise in dev env.
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
@@ -59,4 +67,10 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+
+  # Add Rack::LiveReload to the bottom of the middleware stack with the default options:
+  config.middleware.insert_after ActionDispatch::Static, Rack::LiveReload
+
+  # or, if you're using better_errors:
+  #config.middleware.insert_before Rack::Lock, Rack::LiveReload
 end
