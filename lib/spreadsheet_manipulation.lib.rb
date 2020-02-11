@@ -18,19 +18,19 @@ class Sample
     @consensus = Hash.new
     @composite = Hash.new
   end
-  
+
   def sample_name
     @sample_name
   end
-  
+
   def esi_genotype
     @esi_genotype
   end
-  
+
   def esx_genotype
     @esx_genotype
   end
-  
+
   def consensus
     @consensus
   end
@@ -43,7 +43,7 @@ end
 
 class Array
   def find_duplicates
-    select.with_index do | e, i | 
+    select.with_index do | e, i |
       i != self.index(e)
     end
   end
@@ -77,7 +77,7 @@ samples = Array.new
 sample_names.each do |sample_name|
   sample = Sample.new(sample_name)
   samples << sample
-end  
+end
 
 # read all esi genotypes and store them in the respective sample records inside the array
 esi_genotypes.each do |row|
@@ -86,7 +86,7 @@ esi_genotypes.each do |row|
   esi_allele_cols.each do |col|
   allele = row.field(col)
   alleles << allele
-  end 
+  end
   sample.esi_genotype.merge!({ row.field("Marker") => alleles.compact.sort })
 end
 
@@ -97,7 +97,7 @@ esx_genotypes.each do |row|
   esx_allele_cols.each do |col|
   allele = row.field(col)
   alleles << allele
-  end 
+  end
   sample.esx_genotype.merge!({ row.field("Marker") => alleles.compact.sort })
 end
 
@@ -152,7 +152,8 @@ headers = [ "Sample Name", "SE33", "D21S11", "vWA", "TH01", "FGA", "D3S1358", "D
 header_row = CSV::Row.new(headers, headers, header_row = true)
 outfile <<  header_row
 samples.each do |sample|
-  sample_row = { "Sample Name" => sample.sample_name } 
+  puts sample.sample_name
+  sample_row = { "Sample Name" => sample.sample_name }
   composite = { "Sample Name" => sample.sample_name + "_composite" }
   consensus = { "Sample Name" => sample.sample_name + "_consensus" }
   genotype_format = sample.composite.merge(sample.consensus) { |key, composite, consensus| composite + consensus }
@@ -185,13 +186,13 @@ samples.each do |sample|
     end
     consensus.store(marker, genotype_pairs_joined.join('\n'))
   end
-# 
+#
 #  end
 #  consensus = { "Sample Name" => sample.sample_name }
 #  sample.consensus.each do |marker, genotype|
 #    consensus.store(marker, genotype.join("/"))
 #  end
-#  
+#
   #p composite
 
   outfile << sample_row
