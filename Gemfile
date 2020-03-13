@@ -18,7 +18,7 @@ gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # use passenger as application server
 
@@ -30,24 +30,34 @@ gem "passenger", ">= 5.0.25", require: "phusion_passenger/rack_handler"
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
+# use Devise for User authentication
+gem 'devise'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 3.8'
+
+  gem 'cucumber-rails', require: false
+  gem "spring-commands-cucumber"
+  gem 'spring-commands-rspec'
   # Capybara, the library that allows us to interact with the browser using Ruby
   gem 'capybara'
- 
+
   # This gem helps Capybara interact with the web browser.
   gem 'webdrivers'
-  
+
   # Factory Bot for test data
   gem 'factory_bot'
-  
+
   # Faker for faking test data in factories
   gem 'faker'
-  
+
   # database-cleaner to clean up test data
   gem 'database_cleaner'
+
+  # add launchy to automatically launch browser
+  gem 'launchy'
 end
 
 group :development do
@@ -70,6 +80,8 @@ group :development do
   gem 'guard-passenger'
   gem 'guard-delayed'
 end
-
+group :test do
+  gem 'simplecov', require: false
+end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
