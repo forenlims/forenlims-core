@@ -48,7 +48,7 @@ group :development, :test do
   gem 'webdrivers'
 
   # Factory Bot for test data
-  gem 'factory_bot'
+  gem 'factory_bot_rails'
 
   # Faker for faking test data in factories
   gem 'faker'
