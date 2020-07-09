@@ -53,11 +53,12 @@ cli = HighLine.new
 # read genotype files for ESI and ESX (whole run)
 esi_filename = cli.ask("Please enter ESI Genotype file name  ") { |q| q.default = "none" }
 esx_filename = cli.ask("Please enter ESX Genotype file name  ") { |q| q.default = "none" }
-esi_genotypes = CSV.read(esi_filename, { :col_sep => "\t", :headers => true })
-esx_genotypes = CSV.read(esx_filename, { :col_sep => "\t", :headers => true})
+esi_genotypes = CSV.read(esi_filename, { :col_sep => "\t", :headers => true, :skip_blanks => true})
+esx_genotypes = CSV.read(esx_filename, { :col_sep => "\t", :headers => true, :skip_blanks => true})
 
 # Find all the sample names in both files
 # It is possible that samples are only present in one file, so combine what we have.
+# TODO: remove allelic ladders and positive / negative controls as these are not needed in output.
 
 sample_names = esi_genotypes.values_at("Sample Name").uniq.flatten + esx_genotypes.values_at("Sample Name").uniq.flatten
 # strip out duplicates
