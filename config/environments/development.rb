@@ -35,9 +35,8 @@ Rails.application.configure do
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local
 
-# Default configuration for action_mailer with devise in dev env.
+  # Default configuration for action_mailer with devise in dev env.
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
@@ -72,5 +71,5 @@ Rails.application.configure do
   config.middleware.insert_after ActionDispatch::Static, Rack::LiveReload
 
   # or, if you're using better_errors:
-  #config.middleware.insert_before Rack::Lock, Rack::LiveReload
+  # config.middleware.insert_before Rack::Lock, Rack::LiveReload
 end

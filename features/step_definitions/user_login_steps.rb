@@ -4,7 +4,7 @@ Given(/^the User is not logged in$/) do
 end
 
 When(/^the User opens the application$/) do
-  visit "/"
+  visit '/'
 end
 
 Then(/^the User should be redirected to the Login page$/) do

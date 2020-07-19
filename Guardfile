@@ -36,7 +36,7 @@ end
 
 cucumber_options = {
   # Below are examples overriding defaults
-  cmd: 'bin/cucumber',
+  cmd: 'bin/cucumber'
   # cmd_additional_args: '--profile guard',
 
   # all_after_pass: false,
@@ -49,12 +49,12 @@ cucumber_options = {
   # notification: false
 }
 
-guard "cucumber", cucumber_options do
+guard 'cucumber', cucumber_options do
   watch(%r{^features/.+\.feature$})
-  watch(%r{^features/support/.+$}) { "features" }
+  watch(%r{^features/support/.+$}) { 'features' }
 
   watch(%r{^features/step_definitions/(.+)_steps\.rb$}) do |m|
-    Dir[File.join("**/#{m[1]}.feature")][0] || "features"
+    Dir[File.join("**/#{m[1]}.feature")][0] || 'features'
   end
 end
 
@@ -69,7 +69,7 @@ end
 
 guard :rspec, cmd: 'bundle exec bin/
 rspec -f html -o ./tmp/spec_results.html', launchy: './tmp/spec_results.html' do
-  require "guard/rspec/dsl"
+  require 'guard/rspec/dsl'
   dsl = Guard::RSpec::Dsl.new(self)
 
   # Feel free to open issues for suggestions and improvements
@@ -85,7 +85,7 @@ rspec -f html -o ./tmp/spec_results.html', launchy: './tmp/spec_results.html' do
   dsl.watch_spec_files_for(ruby.lib_files)
 
   # Rails files
-  rails = dsl.rails(view_extensions: %w(erb haml slim))
+  rails = dsl.rails(view_extensions: %w[erb haml slim])
   dsl.watch_spec_files_for(rails.app_files)
   dsl.watch_spec_files_for(rails.views)
 
@@ -109,7 +109,7 @@ rspec -f html -o ./tmp/spec_results.html', launchy: './tmp/spec_results.html' do
   # Turnip features and steps
   watch(%r{^spec/acceptance/(.+)\.feature$})
   watch(%r{^spec/acceptance/steps/(.+)_steps\.rb$}) do |m|
-    Dir[File.join("**/#{m[1]}.feature")][0] || "spec/acceptance"
+    Dir[File.join("**/#{m[1]}.feature")][0] || 'spec/acceptance'
   end
 end
 
@@ -131,11 +131,11 @@ guard 'livereload' do
     png: :png,
     gif: :gif,
     jpg: :jpg,
-    jpeg: :jpeg,
+    jpeg: :jpeg
     # less: :less, # uncomment if you want LESS stylesheets done in browser
   }
 
-  rails_view_exts = %w(erb haml slim)
+  rails_view_exts = %w[erb haml slim]
 
   # file types LiveReload may optimize refresh for
   compiled_exts = extensions.values.uniq
@@ -160,10 +160,10 @@ guard 'livereload' do
 end
 
 guard 'passenger' do
-  watch(/^lib\/.*\.rb$/)
-  watch(/^config\/.*\.rb$/)
+  watch(%r{^lib/.*\.rb$})
+  watch(%r{^config/.*\.rb$})
 end
 
-guard 'delayed', :environment => 'development' do
+guard 'delayed', environment: 'development' do
   watch(%r{^app/(.+)\.rb})
 end
