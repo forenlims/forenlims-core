@@ -60,11 +60,11 @@ group :development, :test do
   gem 'launchy'
 
   # code style analysis with rubocop
+  gem 'guard-rubocop'
   gem 'rubocop'
   gem 'rubocop-performance'
   gem 'rubocop-rails'
   gem 'rubocop-rspec'
-  gem 'guard-rubocop'
 end
 
 group :development do
