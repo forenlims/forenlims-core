@@ -168,7 +168,7 @@ guard 'delayed', environment: 'development' do
   watch(%r{^app/(.+)\.rb})
 end
 
-guard :rubocop, all_on_start: false, notification: :failed, cli: ['--format', '--rails' ] do
-  watch(%r{.+\.rb$})
+guard :rubocop, all_on_start: false, notification: :failed do
+  watch(/.+\.rb$/)
   watch(%r{(?:.+/)?\.rubocop(?:_todo)?\.yml$}) { |m| File.dirname(m[0]) }
 end
