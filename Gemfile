@@ -22,7 +22,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 # use passenger as application server
 
-gem "passenger", ">= 5.0.25", require: "phusion_passenger/rack_handler"
+gem 'passenger', '>= 5.0.25', require: 'phusion_passenger/rack_handler'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -35,11 +35,11 @@ gem 'devise'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'rspec-rails', '~> 3.8'
 
   gem 'cucumber-rails', require: false
-  gem "spring-commands-cucumber"
+  gem 'spring-commands-cucumber'
   gem 'spring-commands-rspec'
   # Capybara, the library that allows us to interact with the browser using Ruby
   gem 'capybara'
@@ -58,30 +58,37 @@ group :development, :test do
 
   # add launchy to automatically launch browser
   gem 'launchy'
+
+  # code style analysis with rubocop
+  gem 'guard-rubocop'
+  gem 'rubocop'
+  gem 'rubocop-performance'
+  gem 'rubocop-rails'
+  gem 'rubocop-rspec'
 end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'web-console', '>= 3.3.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'guard'
-  gem 'guard-bundler', require: false
   gem 'guard-brakeman'
+  gem 'guard-bundler', require: false
   gem 'guard-cucumber'
+  gem 'guard-delayed'
+  gem 'guard-livereload', '~> 2.5', require: false
+  gem 'guard-passenger'
   gem 'guard-rspec', require: false
   gem 'guard-spring'
-  gem "rack-livereload"
-  gem 'guard-livereload', '~> 2.5', require: false
-  gem "better_errors"
-  gem "binding_of_caller"
-  gem 'guard-passenger'
-  gem 'guard-delayed'
+  gem 'rack-livereload'
+  gem 'spring'
+  gem 'spring-watcher-listen', '~> 2.0.0'
 end
 group :test do
   gem 'simplecov', require: false
 end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
