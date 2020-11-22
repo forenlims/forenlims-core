@@ -153,7 +153,6 @@ headers = [ "Sample Name", "SE33", "D21S11", "vWA", "TH01", "FGA", "D3S1358", "D
 header_row = CSV::Row.new(headers, headers, header_row = true)
 outfile <<  header_row
 samples.each do |sample|
-  puts sample.sample_name
   sample_row = { "Sample Name" => sample.sample_name }
   composite = { "Sample Name" => sample.sample_name + "_composite" }
   consensus = { "Sample Name" => sample.sample_name + "_consensus" }

@@ -1,0 +1,12 @@
+<h1>Convert atosomal tables to composite and consensus</h1>
+<h2> to generate an autosomal results table, please upload a file containing ESI results and a file containing ESX results.</h2>
+
+  <%= form_with(url: {action: :convert_autosomal}, multipart: true, local: true) do %>
+    <%= label_tag("ESI Data File") %> 
+    <%= file_field_tag("esi")%>
+    <%= label_tag("ESX Data File") %> 
+    <%= file_field_tag("esx")%>
+    <%= submit_tag("Upload Files") %>
+  <% end %>
+  
+

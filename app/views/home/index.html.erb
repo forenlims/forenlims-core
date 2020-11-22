@@ -1,4 +1,10 @@
-Test Index Page from Home Controller
+<h1>Welome to Forenlims!</h1> 
 
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
+
+<p>For now, we are only able to convert output files from GeneMapper ID-X to table formats used in reports.</p>
+<p> We convert results for autosomal analysis using ESI and ESX data to a composite profile while marking the consensus profile. Alternatively, we convert Y-STR data into a table using one line per sample.</p>
+
+<p> <%= link_to 'Convert Autosomal Results', home_autosomal_path %></p>
+<P><%= link_to 'Convert Y-STR Results', home_ystr_path %></p>
