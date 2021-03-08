@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Given(/^the User is not logged in$/) do
   current_user = nil
   visit('/users/sign_out') # ensure no user is logged in.
