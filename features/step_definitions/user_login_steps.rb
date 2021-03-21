@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 Given(/^the User is not logged in$/) do
   current_user = nil
   visit('/users/sign_out') # ensure no user is logged in.
 end
 
 When(/^the User opens the application$/) do
-  visit "/"
+  visit '/'
 end
 
 Then(/^the User should be redirected to the Login page$/) do
