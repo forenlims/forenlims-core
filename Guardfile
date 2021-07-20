@@ -89,3 +89,8 @@ guard :rspec, cmd: 'bundle exec rspec' do
     Dir[File.join("**/#{m[1]}.feature")][0] || 'spec/acceptance'
   end
 end
+
+guard 'passenger' do
+  watch(%r{^lib/.*\.rb$})
+  watch(%r{^config/.*\.rb$})
+end

@@ -94,6 +94,9 @@ GEM
       guard (~> 2.2)
       guard-compat (~> 1.1)
     guard-compat (1.2.1)
+    guard-passenger (0.6.2)
+      guard (>= 1.1.0)
+      guard-compat (~> 1.1)
     guard-rspec (4.7.3)
       guard (~> 2.1)
       guard-compat (~> 1.1)
@@ -271,6 +274,7 @@ DEPENDENCIES
   guard
   guard-brakeman
   guard-bundler
+  guard-passenger
   guard-rspec
   jbuilder (~> 2.7)
   listen (~> 3.3)
