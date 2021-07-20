@@ -91,6 +91,6 @@ guard :rspec, cmd: 'bundle exec rspec' do
 end
 
 guard 'passenger' do
-  watch(/^lib\/.*\.rb$/)
-  watch(/^config\/.*\.rb$/)
+  watch(%r{^lib/.*\.rb$})
+  watch(%r{^config/.*\.rb$})
 end
