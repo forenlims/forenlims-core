@@ -21,7 +21,8 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+# Use Passenger as Application Server
+gem 'passenger', '>= 5.3.2', require: 'phusion_passenger/rack_handler'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -31,6 +32,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'rspec-rails', '~> 5.0.0'
   gem 'rubocop', require: false
   gem 'rubocop-performance', require: false
   gem 'rubocop-rails', require: false
@@ -48,6 +50,7 @@ group :development do
   gem 'guard'
   gem 'guard-brakeman'
   gem 'guard-bundler', require: false
+  gem 'guard-rspec', require: false
   gem 'spring'
   gem 'spring-commands-rubocop'
 end
