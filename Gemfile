@@ -49,6 +49,7 @@ group :development do
   gem 'guard'
   gem 'guard-brakeman'
   gem 'guard-bundler', require: false
+  gem 'guard-rspec', require: false
   gem 'spring'
   gem 'spring-commands-rubocop'
 end
