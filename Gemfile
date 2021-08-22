@@ -59,7 +59,7 @@ end
 group :test do
   gem 'capybara'
   gem 'cuprite'
-  gem 'factory_bot'
+  gem "factory_bot_rails"
   gem 'factory_trace'
   gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'  #gem 'webdrivers', '~> 4.0', require: false
 end
