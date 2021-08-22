@@ -61,7 +61,7 @@ group :test do
   gem 'cuprite'
   gem 'factory_bot'
   gem 'factory_trace'
-  #gem 'webdrivers', '~> 4.0', require: false
+  gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'  #gem 'webdrivers', '~> 4.0', require: false
 end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
