@@ -59,6 +59,8 @@ end
 group :test do
   gem 'capybara'
   gem 'cuprite'
+  gem 'factory_bot'
+  gem 'factory_trace'
   #gem 'webdrivers', '~> 4.0', require: false
 end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

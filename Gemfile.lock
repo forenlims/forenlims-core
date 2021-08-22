@@ -86,6 +86,10 @@ GEM
       ferrum (~> 0.11.0)
     diff-lcs (1.4.4)
     erubi (1.10.0)
+    factory_bot (6.2.0)
+      activesupport (>= 5.0.0)
+    factory_trace (0.4.1)
+      factory_bot (>= 4.0)
     ferrum (0.11)
       addressable (~> 2.5)
       cliver (~> 0.3)
@@ -295,6 +299,8 @@ DEPENDENCIES
   byebug
   capybara
   cuprite
+  factory_bot
+  factory_trace
   guard
   guard-brakeman
   guard-bundler
