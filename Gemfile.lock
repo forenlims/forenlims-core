@@ -96,6 +96,9 @@ GEM
     erubi (1.10.0)
     factory_bot (6.2.0)
       activesupport (>= 5.0.0)
+    factory_bot_rails (6.2.0)
+      factory_bot (~> 6.2.0)
+      railties (>= 5.0.0)
     factory_trace (0.4.1)
       factory_bot (>= 4.0)
     ferrum (0.11)
@@ -307,7 +310,7 @@ DEPENDENCIES
   byebug
   capybara
   cuprite
-  factory_bot
+  factory_bot_rails
   factory_trace
   faker!
   guard
