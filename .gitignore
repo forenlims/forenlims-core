@@ -30,6 +30,8 @@
 # Ignore database.yml as we don't want database credentials in the version control.
 /config/database.yml
 
+/config/database.yml
+
 /public/packs
 /public/packs-test
 /node_modules
