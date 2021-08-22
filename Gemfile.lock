@@ -113,6 +113,9 @@ GEM
       guard (~> 2.2)
       guard-compat (~> 1.1)
     guard-compat (1.2.1)
+    guard-passenger (0.6.2)
+      guard (>= 1.1.0)
+      guard-compat (~> 1.1)
     guard-rspec (4.7.3)
       guard (~> 2.1)
       guard-compat (~> 1.1)
@@ -145,6 +148,9 @@ GEM
     parallel (1.20.1)
     parser (3.0.2.0)
       ast (~> 2.4.1)
+    passenger (6.0.10)
+      rack
+      rake (>= 0.8.1)
     pg (1.2.3)
     pry (0.14.1)
       coderay (~> 1.1)
@@ -292,9 +298,11 @@ DEPENDENCIES
   guard
   guard-brakeman
   guard-bundler
+  guard-passenger
   guard-rspec
   jbuilder (~> 2.7)
   listen (~> 3.3)
+  passenger (>= 5.3.2)
   pg (~> 1.1)
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.4)
